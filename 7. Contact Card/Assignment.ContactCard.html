@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Assignment: Contact Card</title>
+			<link rel="stylesheet" type="text/css" href="Assignment.ContactCard.css">
+			<script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+
+			<script type="text/javascript">
+				$(document).ready(function(){
+						$("#add_user").click(function(){
+							var field1 = $(".first").val();
+							var field2 = $(".last").val();
+							var field3 = $(".description").val();
+
+							$("#card_case").append("<div><div class='head child'><h1>" + field1 + " " + field2 + "</h1><p>" + "Click for Description!" + "</p></div><div class='tail child'><p>" + field3 + "</p></div></div>");
+						$(".child").click(function(){
+							$(".child").toggle();
+							});
+						});
+					});	
+			</script>
+		</head>
+
+		<body>
+			<div id="wrapper">
+				<div id="form_1">
+					<h2>Contact Card Generator</h2>
+					<ul>
+						<li>
+							<label>First Name: </label>
+							<input type="text" name="first_name" class="first">
+						</li>
+						<li>
+							<label>Last Name: </label>
+							<input type="text" name="last_name" class="last">
+						</li>
+						<li>
+							<label>Description: </label>
+							<input type="text" name="decrip_contact" class="description">
+						</li>
+					</ul>
+					<button id="add_user">Add User</button>
+				</div>
+					<div id="card_case">
+									
+					</div>
+					
+			</div>
+		</body>
+	</html>
